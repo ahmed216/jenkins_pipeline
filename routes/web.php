@@ -16,10 +16,20 @@ Route::group(['prefix' => 'api'], function() {
     // Route::resource('employees', 'EmployeesController');
 });
 
-Auth::routes();
+// Auth::routes();
 
 // this route is for Angular and it should be placed after all other back end routes
 // just keep it at the bottom
 Route::get('/{any}', function ($any) {
     return view('welcome');
 })->where('any', '.*');
+
+
+
+
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
